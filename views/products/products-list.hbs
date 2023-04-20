@@ -1,0 +1,11 @@
+<h1>Our Products</h1>
+
+{{#each productList}}
+
+  <h2>{{this.category}}</h2>
+  <h3>{{this.title}}</h3>
+  <img src="{{this.image}}" alt="{{this.title}}" />
+  <p>{{this.description}}</p>
+  <p>£ {{this.price}}</p>
+
+{{/each}}
