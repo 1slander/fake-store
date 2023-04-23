@@ -17,8 +17,8 @@ img {
   max-width: 100%;
   display: block;
   min-height: 150px;
-  object-fit: cover;
-  width: 15%;
+  object-fit: contain;
+  width: 50%;
 }
 .signup {
   border: 3px solid gray;
@@ -71,4 +71,41 @@ img {
   color: #fff;
   font-size: 1rem;
   font-weight: 700;
+}
+
+.product-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 95%;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.product-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 85%;
+  min-width: 25%;
+  margin: 2em;
+  padding: 0.5em 1.5em;
+  border: 1px solid black;
+}
+
+.product-list-title {
+  text-transform: capitalize;
+}
+.product-detail-title {
+  text-align: center;
+  margin-bottom: 3em;
+}
+
+.product-details-container {
+  display: flex;
+  margin-bottom: 3em;
+}
+
+.product-detail-info {
+  padding: 0.5em 1.5em;
+  border-left: 1px solid black;
+  margin-left: 2em;
 }

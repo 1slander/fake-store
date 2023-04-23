@@ -3,7 +3,9 @@ const router = express.Router();
 
 const ProductsModel = require("../models/Products.model");
 
-/* GET home page */
+/* =================
+    GET PRODUCTS
+==================*/
 router.get("/", async (req, res, next) => {
   try {
     const productList = await ProductsModel.find();
@@ -11,6 +13,21 @@ router.get("/", async (req, res, next) => {
       productList,
       userInSession: req.session.currentUser,
     });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+/* =================
+    INDIVIDUAL PRODUCT
+==================*/
+
+router.get("/:productId", async (req, res) => {
+  try {
+    const { productId } = req.params;
+    console.log(productId);
+    const findProduct = await ProductsModel.findById(productId);
+    res.render("products/product-details.hbs", { findProduct });
   } catch (error) {
     console.log(error);
   }

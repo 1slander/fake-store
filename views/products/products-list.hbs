@@ -8,12 +8,24 @@
   </form>
 {{/if}}
 
-{{#each productList}}
+<div class="product-container">
 
-  <h2>{{this.category}}</h2>
-  <h3>{{this.title}}</h3>
-  <img src="{{this.image}}" alt="{{this.title}}" />
-  <p>{{this.description}}</p>
-  <p>£ {{this.price}}</p>
+  {{#each productList}}
+    <div class="product-wrapper">
 
-{{/each}}
+      <h2 class="product-list-title">{{this.category}}</h2>
+      <a
+        class="product-list-details"
+        href="/products/{{this._id}}"
+      >{{this.title}}</a>
+      <img
+        class="product-list-image"
+        src="{{this.image}}"
+        alt="{{this.title}}"
+      />
+
+    </div>
+
+  {{/each}}
+
+</div>
