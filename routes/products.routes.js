@@ -7,7 +7,10 @@ const ProductsModel = require("../models/Products.model");
 router.get("/", async (req, res, next) => {
   try {
     const productList = await ProductsModel.find();
-    res.render("products/products-list.hbs", { productList });
+    res.render("products/products-list.hbs", {
+      productList,
+      userInSession: req.session.currentUser,
+    });
   } catch (error) {
     console.log(error);
   }

@@ -1,4 +1,12 @@
 <h1>Our Products</h1>
+{{#if userInSession}}
+
+  <a href="/userProfile">Profile</a>
+
+  <form id="logout-form" action="/logout" method="POST">
+    <button>Logout</button>
+  </form>
+{{/if}}
 
 {{#each productList}}
 
