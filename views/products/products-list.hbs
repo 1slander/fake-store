@@ -12,12 +12,11 @@
 
   {{#each productList}}
     <div class="product-wrapper">
-
-      <h2 class="product-list-title">{{this.category}}</h2>
       <a
         class="product-list-details"
         href="/products/{{this._id}}"
       >{{this.title}}</a>
+      <p class="product-info">£{{this.price}}</p>
       <img
         class="product-list-image"
         src="{{this.image}}"

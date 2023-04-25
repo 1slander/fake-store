@@ -9,6 +9,9 @@ const ProductsModel = require("../models/Products.model");
 router.get("/", async (req, res, next) => {
   try {
     const productList = await ProductsModel.find();
+    //trying to get and array fo the categories
+    // const categories = await ProductsModel.find({ category: 1 });
+    // console.log(`this categories`, categories);
     res.render("products/products-list.hbs", {
       productList,
       userInSession: req.session.currentUser,

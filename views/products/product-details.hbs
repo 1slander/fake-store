@@ -8,6 +8,21 @@
   <div class="product-detail-info">
     <p>£ {{findProduct.price}}</p>
     <p>{{findProduct.description}}</p>
+    <div class="product-detail-btn">
+      <form action="/cart" method="post">
+        <label for="itemId"></label>
+        <input
+          type="hidden"
+          name="productId"
+          value="{{findProduct._id}}"
+          id="itemId"
+        />
+        <label for="quantity"></label>
+        <input type="number" name="quantity" id="quantity" placeholder="1" />
+        <button type="submit">Add to Cart</button>
+        <a href="/cart">View Cart</a>
+      </form>
+    </div>
 
   </div>
 
